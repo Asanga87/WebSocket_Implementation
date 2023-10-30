@@ -16,3 +16,16 @@ Then Client print the respond come from initially web socket nd then from http p
 "Worker Handler" button send the call to work/start http post endpoint and simillarly it generate ws call to /message web socket endpoint. Respond will follow the similar path from Web socket to http post and then to client. Then client will print the work/start respond in the out put windows. Then server will wait for 3000 ms and then send the final message work complete.
 
 However drawback of this implemenataion is client cannot grab the second message come from the ws server when the call generate from the http prtocol. Hence in order to demonstrate the accurate implementation of the client I use the Work Handler Ws button which make a final call to web socket server. Based on that call again web socket server directly respond to the client first and then after 3000 ms wait time it again respond to the client with the work completed end message. Both work start message comes with random generated Id and same Id will be used to send work completed message. 
+
+Development Enviornment
+Server: Visual Studio 2022 , Framework:.Net 6.0 , Project Template: Asp.Net Core Empty Template
+Client: Visaul Studio 2022 , Framework:.Net 6.0, Project Template : Windows Desktop Application
+
+How to run 
+
+Step 1: Open Serever application using visual studio and run it on localhost . URL has been setup as http://localhost:6767
+Step 2: Open server application using visul studio and run it normally. All above funtions are implemented from button clicks. Try to click "Welcome call" button to "Work Handler Ws" and you will see the output from Output window located in the below part of the form. 
+
+Special Note: Please wait 3000 ms until serever send the final message after you click the "Work Handler Ws" button.
+
+Thank you for reading and send me your comments after executing the project. Cheers!!!
